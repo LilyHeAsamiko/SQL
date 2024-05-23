@@ -1,0 +1,1 @@
+select "0m",latitude,longitude from normals order by "0m" DESC,latitude ASC limit 10;

@@ -1,0 +1,1 @@
+select titles from episodes where topic is NULL;

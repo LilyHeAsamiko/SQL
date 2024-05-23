@@ -1,0 +1,1 @@
+select  "0m","100m","200m" from normals where latitude=="31.5" and longitude == "-58.5";
