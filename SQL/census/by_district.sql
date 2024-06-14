@@ -1,0 +1,1 @@
+create view "by_district" as select district,families,households,population,male,female from census group by district;
