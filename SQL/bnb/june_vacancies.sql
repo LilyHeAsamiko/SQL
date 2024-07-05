@@ -1,0 +1,1 @@
+select A.id as id,A.property_type as property_type,A.host_name as host_name, count(B.price) as "days_vacant" from listings A inner join availabilities B on A.id == B.listing_id where B.date between "2023-06-01" and "2023-06-30" and B.available is "TRUE";

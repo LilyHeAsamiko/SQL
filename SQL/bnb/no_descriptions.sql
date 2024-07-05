@@ -1,0 +1,1 @@
+create view no_descriptions as select * from listings where not exists (select * from description);
