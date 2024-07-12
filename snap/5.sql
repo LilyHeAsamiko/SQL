@@ -1,0 +1,1 @@
+select friend_id from friends indexed by "sqlite_autoindex_friends_1" where user_id == (select id from users where username = "lovelytrust487") intersect select friend_id from friends indexed by "sqlite_autoindex_friends_1" where user_id == (select id from users where username ="exceptionalinspiration482"); 

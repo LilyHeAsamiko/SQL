@@ -1,0 +1,2 @@
+CREATE INDEX "search_messages_by_from_user_id" ON "messages"("from_user_id");
+select to_user_id,count(to_user_id) from messages indexed by search_messages_by_from_user_id where from_user_id == 2318 group by to_user_id order by count(to_user_id) DESC limit 3;
