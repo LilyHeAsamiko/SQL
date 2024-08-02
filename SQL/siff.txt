@@ -1,0 +1,728 @@
+Starfall
+Zhang Dalei
+
+A Man And A Woman
+Guan Hu
+
+A Quiet Place
+John Krasinski
+
+Laapataa Ladies
+Kiran Rao
+
+Beetlejuice
+Tim Burton
+
+Despicable Me 3
+Kyle Balda
+
+Pulp Fiction
+Quentin Tarantino
+
+Snowflakes in My Yard
+Bakur Bakuradze
+
+The Hedgehog
+Gu Changwei
+
+Red Radio Over Shanghai
+Zheng Dasheng
+
+Despicable Me
+Chris Renaud
+
+Minions
+Kyle Balda
+
+A Quiet Place Part II
+John Krasinski
+
+Bad Boys
+Michael Bay
+
+Another German Tank Story
+Jannis Alexander Kiefer
+
+Talk to Me
+Danny Philippou
+
+Eternal Sunshine of the Spotless Mind
+Michel Gondry
+
+Minions: The Rise of Gru
+Kyle Balda
+
+Perfect Days
+Wim Wenders
+
+12th Fail
+Vidhu Vinod Chopra
+
+May December
+Todd Haynes
+
+Moneyball
+Bennett Miller
+
+Dumb Money
+Craig Gillespie
+
+2001: A Space Odyssey
+Stanley Kubrick
+
+Les Misérables
+Tom Hooper
+
+Asteroid City
+Wes Anderson
+
+Wild Tales
+Damián Szifron
+
+Freud's Last Session
+Matthew Brown
+
+Missing
+Keisuke Yoshida
+
+Detective Conan: The Million-dollar Pentagram
+Chika Nagaoka
+
+The Beast
+Bertrand Bonello
+
+Kramer vs. Kramer
+Robert Benton
+
+Mars Express
+Jérémie Périn
+
+The Bridge on the River Kwai
+David Lean
+
+Io Capitano
+Matteo Garrone
+
+Ghost in the Shell
+Mamoru Oshii
+
+Coup de chance
+Woody Allen
+
+Centaur
+Kirill Kemnits
+
+Adagio
+Stefano Sollima
+
+It Happened One Night
+Frank Capra
+
+Weekend Rebels
+Marc Rothemund
+
+Ghost in the Shell 2: Innocence
+Mamoru Oshii
+
+Extinction
+Behnoud Nekouei
+
+The Killer
+John Woo
+
+I'm Your Man
+Maria Schrader
+
+Sleep
+Jason Yu
+
+Borgo
+Stéphane Demoustier
+
+Pokémon 3: The Movie
+Kunihiko Yuyama
+
+Sidonie in Japan
+Élise Girard
+
+Argentina, 1985
+Santiago Mitre
+
+Pokémon the Movie: I Choose You!
+Kunihiko Yuyama
+
+Let's Go Karaoke!
+Nobuhiro Yamashita
+
+Lucky Winners
+Maxime Govare
+
+Pokémon Heroes
+Kunihiko Yuyama
+
+Tótem
+Lila Avilés
+
+Teasing Master Takagi-san Movie
+Rikiya Imaizumi
+
+The Inventor
+Pierre-Luc Granjon
+
+Ichiko
+Akihiro Toda
+
+Pokémon the Movie: The Power of Us
+Tetsuo Yajima
+
+Another End
+Piero Messina
+
+Across The Furious Sea
+Cao Baoping
+
+Toni
+Nathan Ambrosioni
+
+Dog Days
+Kim Deok-min
+
+(Ab)normal Desire
+
+A Traveler’s Needs
+Hong Sang-soo
+
+Norwegian Wood
+Tran Anh Hung
+
+Let's Get Lost
+Bruce Weber
+
+Onmyoji Zero
+Shimako Satō
+
+Dance First
+James Marsh
+
+Jokes & Cigarettes
+David Trueba
+
+Happiness
+Micaela Ramazzotti
+
+Running on Sand
+Adar Shafran
+
+Kyrie
+Shunji Iwai
+
+100 Yen Love
+Masaharu Take
+
+Havoc in Heaven
+Wan Laiming
+
+La Luna
+M. Raihan Halim
+
+Pokémon—Zoroark: Master of Illusions
+Kunihiko Yuyama
+
+MMXX
+Cristi Puiu
+
+Thithi
+Raam Reddy
+
+Proof
+Jocelyn Moorhouse
+
+Eternity
+Tran Anh Hung
+
+Kabuliwala
+Suman Ghosh
+
+Dahomey
+Mati Diop
+
+Mantra Warrior: The Legend of the Eight Moons
+Veerapatra Jinanavin
+
+The Wait
+F. Javier Gutiérrez
+
+Il Grido
+Michelangelo Antonioni
+
+Kohlhiesel's Daughters
+Ernst Lubitsch
+
+Andrea's Love
+Manuel Martín Cuenca
+
+L'Ultima Volta Che Siamo Stati Bambini
+Claudio Bisio
+
+Hanna and the Monsters
+Lorena Ares
+
+The Moon
+Yuya Ishii
+
+I Want to Talk About Duras
+Claire Simon
+
+Kimi yo Fundo no Kawa o Watare
+Junya Sato
+
+Dahufa
+Busifan
+
+The Yellow Handkerchief
+Yôji Yamada
+
+Antarctica Calling
+Luc Jacquet
+
+The Falling Star
+Fiona Gordon
+
+Architecton
+Victor Kossakovsky
+
+The Lorry
+Marguerite Duras
+
+Her second chance
+Vito Palmieri
+
+The Adventures of Sanmao the Waif
+Zhao Ming
+
+Vika!
+Agnieszka Zwiefka
+
+Skin of Glass
+Denise Zmekhol
+
+Mediha
+Hasan Oswald
+
+I Wish I Knew
+Jia Zhangke
+
+Woman of the Ganges
+Marguerite Duras
+
+Bark
+Marc Schoelermann
+
+Penalty Loop
+Shinji Araki
+
+Solitude
+Ninna Pálmadóttir
+
+Encounters
+Dmitriy Moiseev
+
+The Great White Tower
+Satsuo Yamamoto
+
+Lhamo And Skalbe
+Sonthar Gyal
+
+Sealed Orders
+Benjamin Christensen
+
+The Zola Experience
+Gianluca Matarrese
+
+The Eternal Night
+Eneko Sagardoy
+
+Trouble Makers
+Cao Baoping
+
+Silence Of The Seashell
+Kamar Ahmad Simon
+
+Go for Broke
+Wang Guangli
+
+Singing When We're Young
+Juan Liu
+
+South of the Clouds
+Zhu Wen
+
+90 Years Old - So What?
+Tetsu Maeda
+
+Jackie the Wolf
+Tuki Jencquel
+
+A Corner in the City
+Teng Wenji
+
+Worlds Apart
+Natsuki Seta
+
+Stay Mum
+Kōsai Sekine
+
+Amaia’s Guests
+George Todria
+
+Any Day Now, You Will Poison Her
+
+Amanda, You Lied
+Nuria Muñoz
+
+Adult
+
+Utländsk
+Alba Lozano
+
+The Wizard of Oz
+Victor Fleming
+
+Despicable Me 2
+Chris Renaud
+
+Taxi Driver
+Martin Scorsese
+
+The Divorce
+Daniyar Salamat
+
+Ex Machina
+Alex Garland
+
+Wicked Little Letters
+Thea Sharrock
+
+Her
+Spike Jonze
+
+The Taste of Things
+Tran Anh Hung
+
+Once Upon a Time in America
+Sergio Leone
+
+Groundhog Day
+Harold Ramis
+
+Dunki
+Rajkumar Hirani
+
+About Dry Grasses
+Nuri Bilge Ceylan
+
+Living in Two Worlds
+Mipo O
+
+Metropolis
+Fritz Lang
+
+Evil Does Not Exist
+Ryusuke Hamaguchi
+
+The Undertaker
+Thiti Srinual
+
+The Great Escaper
+Oliver Parker
+
+Gaslight
+George Cukor
+
+13 Bombs
+Angga Dwimas Sasongko
+
+The Age of Innocence
+Martin Scorsese
+
+The French Connection
+William Friedkin
+
+The Old Oak
+Ken Loach
+
+Dying
+Matthias Glasner
+
+Picnic at Hanging Rock
+Peter Weir
+
+The Soul Eater
+Alexandre Bustillo
+
+La Strada
+Federico Fellini
+
+Bad Actor
+Jorge Cuchi
+
+The Dead Don't Hurt
+Viggo Mortensen
+
+Hiroshima, Mon Amour
+Alain Resnais
+
+Murder on the Orient Express
+Sidney Lumet
+
+Scarygirl
+Ricard Cussó
+
+Mr. Smith Goes to Washington
+Frank Capra
+
+A Matter of Life and Death
+Michael Powell
+
+Anselm
+Wim Wenders
+
+Project A
+Sammo Hung
+
+Not Friends
+Atta Hemwadee
+
+All to Play For
+Delphine Deloget
+
+Raise the Red Lantern
+Zhang Yimou
+
+Inside the Yellow Cocoon Shell
+Pham Thien An
+
+Pokémon: Lucario and the Mystery of Mew
+Kunihiko Yuyama
+
+Close Your Eyes
+Víctor Erice
+
+Seven Veils
+Atom Egoyan
+
+Before It Ends
+Anders Walter
+
+La casa
+Álex Montoya
+
+Through the Night
+Delphine Girard
+
+Chasing Johnny
+Baptiste Debraux
+
+Comandante
+Edoardo De Angelis
+
+Limbo
+Ivan Sen
+
+All the Long Nights
+Sho Miyake
+
+Hana and Alice
+Shunji Iwai
+
+King of Beggars
+Gordon Chan
+
+15 Years
+Chris Kraus
+
+The Flying Classroom
+Carolina Hellsgård
+
+Father and Master
+Paolo Taviani
+
+Hajjan
+Abu Bakr Shawky
+
+I'm Not Angry!
+Reza Dormishian
+
+Sirocco and the Kingdom of the Winds
+Benoît Chieux
+
+Nina and the Hedgehog's Secret
+Jean-Loup Felicioli
+
+Rabies
+Dmitriy Dyachenko
+
+The Last Laugh
+F. W. Murnau
+
+Charlie's Country
+Rolf de Heer
+
+The Long Absence
+Henri Colpi
+
+The Swordsman
+Tsui Hark
+
+Room 999
+Lubna Playoust
+
+Johatsu - Into Thin Air
+Andreas Hartmann
+
+Moving
+Shinji Sōmai
+
+The Goddess
+Wu Yonggang
+
+The Survival of Kindness
+Rolf de Heer
+
+Empty Nets
+Behrooz Karamizade
+
+0.5mm
+Momoko Andô
+
+Once Upon a Time There Was a Singing Blackbird
+Otar Iosseliani
+
+Of Fathers and Sons
+Talal Derki
+
+The Intangible Joy Of Love
+Lars Kraume
+
+Gerlach
+Aliona van der Horst
+
+Something Like An Autobiography
+Mostofa Sarwar Farooki
+
+Fly Me To The Saitama: From Biwa Lake With Love
+Hideki Takeuchi
+
+Oceans Are the Real Continents
+Tommaso Santambrogio
+
+Stolen
+Karan Tejpal
+
+B for Busy
+Shao Yihui
+
+Shuttle Life
+Tan Seng Kiat
+
+The Wasteland
+Ahmad Bahrami
+
+Scorched Earth
+Thomas Arslan
+
+52-Hertz Whales
+Izuru Narushima
+
+There Was a Father
+Yasujirō Ozu
+
+A Distant Cry from Spring
+Yôji Yamada
+
+The Major Tones
+Ingrid Pokropek
+
+Aquarium
+Ilya Shagalov
+
+Kidnapping Inc.
+Bruno Mourral
+
+Princess Iron Fan
+Wan Laiming
+
+Artificial Justice
+Simón Casal
+
+Crows and Sparrows
+Zheng Junli
+
+Cosmic Miniatures
+Alexander Kluge
+
+Return Ticket
+Teng Yung-Shing
+
+Under the Sky of Damascus
+Talal Derki
+
+100 Preludes
+Alessandra Pescetta
+
+Three
+Nayla Al Khaja
+
+Iraq's Invisible Beauty
+Sahim Omar Kalifa
+
+Secret: A Hidden Score
+Hayato Kawai
+
+The Wrestler
+Iqbal Hossain Chowdhury
+
+A Bathroom of One's Own
+Lucía Casañ Rodríguez
+
+Nôs Dança
+Rui Lopes Da Silva
+
+The Rebels
+Vladimir Alenikov
+
+Shanghai Fever
+Lee Kwok-lap
+
+Valensole
+Dominique Filhol
+
+Música!
+Rob Epstein
+
+Armata
+Jasone Urgoitia Urrutia
+
+Follow Follow
+Peng Lei
+
+The Reunions
+Dong Chengpeng
+
+Jalainur
+Zhao Ye
+
+Don'T Worry, Be Happy
+Wei Shujun
+
+Delirio
+Alexandra Latishev
+
+Visit From China
+
+In Praise of Shadows
+Catherine Martin
+
+Kidnap Karajan
+Zhang Jianya
+
