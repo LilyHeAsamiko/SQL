@@ -4,6 +4,7 @@ Created on Fri May 17 10:16:18 2024
 
 @author: Qin_LilyHeAsamiko
 """
+import time
 import sqlite3
 import requests
 from lxml import etree
@@ -11,8 +12,211 @@ import re
 from io import StringIO
 import numpy as np
 import csv
-import time
-import pandas as pd
+from PIL import Image, ImageDraw, ImageFont
+import numpy as np
+import os
+
+from paddleocr import PaddleOCR, draw_ocr
+img_path = r"E:\SQL\project\asian award.jpg"
+txt_path = r"E:\SQL\project\asian_award_text0.txt"
+txtCN_path = r"E:\SQL\project\asian_award_textCN.txt"
+txtEN_path = r"E:\SQL\project\asian_award_textEN.txt"
+result = PaddleOCR().ocr(img_path)
+resultCN = PaddleOCR(use_angle_cls=True,use_gpu=False,lang='ch').ocr(img_path)
+resultEN = PaddleOCR(lang='en').ocr(img_path)
+
+def writeResult(path,RES):
+    with open(txt_path,'w',encoding='utf-8') as file:
+        for line in RES:
+            for word in line:
+                text=word[-1][0]
+                print("text: ",text)
+                file.write(text +'\n')
+            
+writeResult(txt_path,result)
+writeResult(txtCN_path,resultCN)
+writeResult(txtEN_path,resultEN)            
+
+image = Image.open(img_path)#.convert('RGB')
+boxes = []
+txts = []
+scores = []
+for line in result:
+    boxes.append([w[0] for w in line])
+    txts.append([w[1][0] for w in line])
+    scores.append([w[1][1] for w in line])
+#im_show = draw_ocr(image, boxes, txts, scores)
+im_show = draw_ocr(image, list(boxes[0]), list(txts[0]),list(scores[0]))
+imshow = Image.fromarray(im_show)
+imshow.save(r'e:/SQL/project/result.jpg')
+
+#extract needed parts
+contents = []
+for item in boxes[0]:
+#    print(item)
+    #print((item[1][0][0][0],item[1][0][0][1],item[1][0][2][0],item[1][0][2][1]))
+    contents.append(image.crop((item[0][0],item[0][1],item[2][0],item[2][1])))
+#load label
+label_path = r"E:\SQL\project\asian_award_label.txt"
+labels = []
+locations = []
+if os.path.exists(label_path):
+    with open(label_path,'r',encoding = 'utf-8') as f:
+        f.seek(0,0)
+        temp=f.readlines()
+        for l in temp:
+            if l != '\n':
+                content = l.split(',(')
+                print(content,len(content))
+                labels.append(content[0])
+                locations.append(content[1].replace('\n','').replace(')','').replace("'",'').replace("'",''))
+
+import cv2
+imgs = []
+gr_imgs = []
+bl_imgs = []
+nm_imgs = []
+edged_imgs = []
+thresh_imgs = []
+locResults = []
+txtResults = []
+scoreResults = []
+ThreshlocResults = []
+ThreshtxtResults = []
+ThreshscoreResults = []
+for loc in locations:
+    try:
+        temp = loc.split(',')        
+        #image =np.ascontiguousarray(image).crop((int(temp[0]),int(temp[1]),int(temp[2]),int(temp[3]))
+            #print(np.array(image)[int(temp[0]):int(temp[2]),int(temp[1]):int(temp[3])])        
+        imgs.append(np.array(image)[int(temp[1]):int(temp[3]),int(temp[0]):int(temp[2])])
+        gr_imgs.append(cv2.cvtColor(imgs[-1],cv2.COLOR_BGR2GRAY))
+        bl_imgs.append(cv2.GaussianBlur(gr_imgs[-1],(5,5),0))
+        nm_imgs.append(bl_imgs[-1]/255.0)
+        edged_imgs.append(cv2.Canny(bl_imgs[-1],50,200))
+        #or
+        thresh_imgs.append(cv2.threshold(edged_imgs[-1],127,255,cv2.THRESH_BINARY)[1])
+        cnts = cv2.findContours(thresh_imgs[-1].copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[1]
+        cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:10]
+        #draw_img = cv2.drawContours(imgs[-1].copy,cnts[0],-1,(0,255,255),2)
+        '''
+        for c in cnts:
+            # 计算轮廓近似
+            peri = cv2.arcLength(c, True)
+            # c表示输入的点集
+            # epsilon表示从原始轮廓到近似轮廓的最大距离，它是一个准确度参数
+            # True表示封闭的
+            approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+            print(len(approx))
+            # 4个点的时候就拿出来
+            if len(approx) == 4:
+                screenCnt = approx
+                break
+        cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
+        '''
+        tempresult =PaddleOCR().ocr(np.array(thresh_imgs[-1]))
+        tempResult = PaddleOCR().ocr(imgs[-1])
+        for p in tempresult:
+            [ThreshlocResults.append(q[0]) for q in p]
+            [ThreshtxtResults.append(q[1][0]) for q in p]
+            [ThreshscoreResults.append(q[1][1]) for q in p]
+        for i in tempResult:
+            [locResults.append(j[0]) for j in i]
+            [txtResults.append(j[1][0]) for j in i]
+            [scoreResults.append(j[1][1]) for j in i]
+    except Exception as e:
+        print(e,'error at:',loc)
+
+import matplotlib.pyplot as plt
+compRes = [i[1] for i in list(enumerate(zip(scoreResults,ThreshscoreResults)))]
+plt.figure()
+plt.plot(compRes)
+plt.legend(['imageOCR_ACC','imageThresholdOCR_ACC'])
+plt.xlabel('contents')
+plt.ylabel('OCR_ACC')
+
+im_show = draw_ocr(image, list(locResults), list(txtResults),list(scoreResults))
+imshow = Image.fromarray(im_show)
+imshow.save(r'e:/SQL/project/ImprovedResult.jpg')
+Thresh_im_show = draw_ocr(image, list(ThreshlocResults), list(ThreshtxtResults),list(ThreshscoreResults))
+Thresh_imshow = Image.fromarray(Thresh_im_show)
+Thresh_imshow.save(r'e:/SQL/project/ImprovedThreshResult.jpg')
+
+#EN CN
+#noEN : 4,6,8,10,12,14...,25,27,29...
+Pimgs = []
+Pgr_imgs = []
+Pbl_imgs = []
+Pnm_imgs = []
+Pedged_imgs = []
+Pthresh_imgs = []
+PlocResults = []
+PtxtResults = []
+PscoreResults = []
+PCNlocResults = []
+PCNtxtResults = []
+PCNscoreResults = []
+noTrans = [2,3,3,4,5,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,
+40,41,42]
+for loc in enumerate(locResults):
+    try:
+        temp = locations[noTrans[loc[0]]].split(',')        
+        #image =np.ascontiguousarray(image).crop((int(temp[0]),int(temp[1]),int(temp[2]),int(temp[3]))
+            #print(np.array(image)[int(temp[0]):int(temp[2]),int(temp[1]):int(temp[3])])        
+        if (loc[0] >2 and np.mod(loc[0],2) == 0 and loc[0]<25) or (loc[0] >=25 and np.mod(loc[0],2) == 1):  
+            Pimgs.append(np.array(image)[int(temp[1]):int(temp[3]),int(temp[0]):int(temp[2])])
+            Pgr_imgs.append(cv2.cvtColor(Pimgs[-1],cv2.COLOR_BGR2GRAY))
+            Pbl_imgs.append(cv2.GaussianBlur(Pgr_imgs[-1],(5,5),0))
+            Pnm_imgs.append(Pbl_imgs[-1]/255.0)
+            Pedged_imgs.append(cv2.Canny(Pbl_imgs[-1],50,200))
+            #or
+            Pthresh_imgs.append(cv2.threshold(Pedged_imgs[-1],127,255,cv2.THRESH_BINARY)[1])
+            cnts = cv2.findContours(Pthresh_imgs[-1].copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[1]
+            cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:10]
+            #draw_img = cv2.drawContours(imgs[-1].copy,cnts[0],-1,(0,255,255),2)
+            Ptempresult =PaddleOCR(lang='en').ocr(np.array(Pimgs[-1]))
+            for p in Ptempresult:
+                [PlocResults.append(q[0]) for q in p]
+                [PtxtResults.append(q[1][0]) for q in p]
+                [PscoreResults.append(q[1][1]) for q in p]
+        elif loc[0] <=2 or (loc[0] >2 and np.mod(loc[0],2) == 1 and loc[0]<25) or (loc[0]>=25 and np.mod(loc[0],2) == 0):
+            Pimgs.append(np.array(image)[int(temp[1]):int(temp[3]),int(temp[0]):int(temp[2])])
+            Pgr_imgs.append(cv2.cvtColor(Pimgs[-1],cv2.COLOR_BGR2GRAY))
+            Pbl_imgs.append(cv2.GaussianBlur(Pgr_imgs[-1],(5,5),0))
+            Pnm_imgs.append(Pbl_imgs[-1]/255.0)
+            Pedged_imgs.append(cv2.Canny(Pbl_imgs[-1],50,200))
+            #or
+            Pthresh_imgs.append(cv2.threshold(Pedged_imgs[-1],127,255,cv2.THRESH_BINARY)[1])
+            cnts = cv2.findContours(Pthresh_imgs[-1].copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[1]
+            cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:10]
+            #draw_img = cv2.drawContours(imgs[-1].copy,cnts[0],-1,(0,255,255),2)
+            Ptempresult =PaddleOCR(lang='ch').ocr(np.array(Pimgs[-1]))
+            for p in Ptempresult:
+                [PCNlocResults.append(q[0]) for q in p]
+                [PCNtxtResults.append(q[1][0]) for q in p]
+                [PCNscoreResults.append(q[1][1]) for q in p]    
+    except Exception as e:
+        print(e,'error at:',loc)
+plt.figure()
+plt.plot(range(len(PscoreResults)),PscoreResults,'o')
+plt.title('imageENOCR_ACC')
+plt.xlabel('contents')
+plt.ylabel('OCR_EN_ACC')
+
+plt.figure()
+plt.plot(range(len(PCNscoreResults)),PCNscoreResults,'*')
+plt.title('imageCNOCR_ACC')
+plt.xlabel('contents')
+plt.ylabel('OCR_CN_ACC')
+
+im_show = draw_ocr(image, list(PlocResults), list(PtxtResults),list(PscoreResults))
+imshow = Image.fromarray(im_show)
+imshow.save(r'e:/SQL/project/ImprovedENResult.jpg')
+P_im_show = draw_ocr(image, list(PCNlocResults), list(PCNtxtResults),list(PCNscoreResults))
+P_imshow = Image.fromarray(P_im_show)
+P_imshow.save(r'e:/SQL/project/ImprovedCNResult.jpg')
+
+
 
 def get_film_list(file):
     with open(file,'r', encoding='utf-8') as f:
@@ -345,6 +549,8 @@ def get_SSIF_awards(url = "https://www.siff.com/english/content?aid=101240622235
             if nc[i[0]] is not None and dc[i[0]] is not None:
                 awards[str(nc[i[0]])] = dc[i[0]]
     return awards
+
+import pandas as pd
 
 def readData(files):
     Data = []
